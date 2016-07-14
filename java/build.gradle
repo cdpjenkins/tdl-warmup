@@ -14,6 +14,7 @@ repositories {
 dependencies {
     compile 'com.google.guava:guava:18.0'
     compile 'ro.ghionoiu:tdl-client-java:0.10.2'
+    compile 'com.google.guava:guava:19.0'
 
     testCompile ('junit:junit:4.12') {
         exclude module : 'hamcrest-core'

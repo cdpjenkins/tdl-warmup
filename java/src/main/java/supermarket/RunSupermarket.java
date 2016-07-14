@@ -19,7 +19,7 @@ public class RunSupermarket {
     private static final String EMAIL = "cdpjenkins@gmail.com";
 
     // STEP 3. Run the client in trial mode
-    private static final boolean I_AM_READY = true;
+    private static final boolean I_AM_READY = false;
     /**
      * ~~~  How to run in trial mode~~~
      *

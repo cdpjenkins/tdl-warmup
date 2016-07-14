@@ -1,5 +1,7 @@
 package supermarket;
 
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multiset;
 import org.junit.Test;
 import org.mockito.internal.invocation.SerializableMethod;
 
@@ -85,6 +87,22 @@ public class SupermarketAppTest {
     @Test
     public void given3Fs_shouldChargePriceOf2s() {
         assertThat(SupermarketApp.checkout("FFF"), is(20));
+    }
+
+    // 3 out of 5
+    @Test
+    public void given3Of_STXYZ_shouldCharge45() {
+        assertThat(SupermarketApp.checkout("XYZ"), is(45));
+    }
+
+    @Test
+    public void given6Of_STXYZ_shouldCharge90() {
+        assertThat(SupermarketApp.checkout("XYZSTZ"), is(90));
+    }
+
+    @Test
+    public void SSSZ() {
+        assertThat(SupermarketApp.checkout("SSSZ"), is(65));
     }
 }
 

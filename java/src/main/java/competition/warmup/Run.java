@@ -1,6 +1,7 @@
 package competition.warmup;
 
 import com.google.common.io.Files;
+import competition.warmup.hello.HelloApp;
 import tdl.client.Client;
 import tdl.client.ProcessingRules;
 import tdl.client.actions.ClientAction;
@@ -15,11 +16,11 @@ import static tdl.client.actions.ClientActions.stop;
 
 public class Run {
     // STEP 2. Set the hostname and email
-    private static final String HOSTNAME = "server_hostname";
-    private static final String EMAIL = "your_email";
+    private static final String HOSTNAME = "192.168.0.63";
+    private static final String EMAIL = "cdpjenkins@gmail.com";
 
     // STEP 3. Run the client in trial mode
-    private static final boolean I_AM_READY = false;
+    private static final boolean I_AM_READY = true;
     /**
      * ~~~  How to run in trial mode~~~
      *
@@ -50,7 +51,7 @@ public class Run {
         ProcessingRules processingRules = new ProcessingRules() {{
             on("display_description").call(p -> displayAndSaveDescription(p[0], p[1])).then(publish());
             // STEP 5. Uncomment the following line to register the sum method and run again
-//            on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
+            on("hello").call(p -> HelloApp.hello(p[0])).then(publishIf(ready));
         }};
 
         // STEP 6. Run the test (competition.warmup.AppTest) and see it fail
